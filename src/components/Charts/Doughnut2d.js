@@ -29,7 +29,6 @@ const chartConfigs = {
     // Chart Configuration
     chart: {
       caption: "Stars per Languages",
-      theme: "fusion",
       decimals: '0',
       showPercentValues: 0,
       theme: 'candy'

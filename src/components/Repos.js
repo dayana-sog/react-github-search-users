@@ -29,6 +29,7 @@ const Repos = () => {
     return b.value - a.value;
   }).slice(0, 5);
 
+  //most stars per language
   const mostPopular = Object.values(languages).sort((a, b) => {
     return b.stars - a.stars;
 
@@ -36,30 +37,36 @@ const Repos = () => {
     return {...item, value: item.stars}
   }).slice(0, 5);
 
-  console.log(mostPopular);
 
-  // STEP 2 - Chart Data
-const chartData = [
-  {
-    label: "HTML",
-    value: "13 "
-  },
-  {
-    label: "CSS",
-    value: "23"
-  },
-  {
-    label: "JavaScript",
-    value: "50"
-  },
-];
+  // stars, forks  
+  let { stars, forks } = repos.reduce((total, item) => {
+    const {stargazers_count, name, forks} = item;
+    total.stars[stargazers_count] = { 
+      label: name,
+      value:  stargazers_count
+    }; 
+
+    total.forks[stargazers_count] = {
+      label: name,
+      value:  forks
+    };
+
+    return total;
+  }, {
+    stars: {},
+    forks: {},
+  });
+
+  stars = Object.values(stars).slice(-5).reverse();
+  forks = Object.values(forks).slice(-5).reverse();
 
   return (
     <section className='section'>
       <Wrapper className='section-center'>
         <Pie3D data={mostUsed} />
-        <div></div>
-        <Doughnut2D data={chartData}/>
+        <Column3D data={stars}/>
+        <Doughnut2D data={mostPopular}/>
+        <Bar3D data={forks} />
       </Wrapper>
     </section>
   );
