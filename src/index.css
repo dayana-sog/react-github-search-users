@@ -34,14 +34,16 @@ Variables
   --clr-grey-5: hsl(210, 22%, 49%);
   --clr-grey-6: hsl(209, 23%, 60%);
   --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-8: hsl(234, 5%, 62%);
   --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: #f1f5f8;
+  --clr-grey-10:hsl(222, 15%, 17%);
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
+  /*border color general*/
+  --border-color:  hsl(325, 100%, 50%);
   --clr-black: #222;
   --ff-primary: 'Roboto', sans-serif;
   --ff-secondary: 'Open Sans', sans-serif;
@@ -69,7 +71,7 @@ Global Styles
 body {
   font-family: var(--ff-secondary);
   background: var(--clr-grey-10);
-  color: var(--clr-grey-1);
+  color: var(--clr-grey-6);
   line-height: 1.5;
   font-size: 0.875rem;
 }
@@ -108,7 +110,7 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-6);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -137,8 +139,8 @@ p {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-primary-10);
+  background: var(--border-color);
+  color: var(--clr-white);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;

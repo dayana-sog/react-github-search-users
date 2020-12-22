@@ -76,6 +76,7 @@ const Wrapper = styled.div`
   display: grid;
   justify-items: center;
   gap: 2rem;
+
   @media (min-width: 800px) {
     grid-template-columns: 1fr 1fr;
   }
@@ -84,6 +85,8 @@ const Wrapper = styled.div`
   }
   div {
     width: 100% !important;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
   }
   .fusioncharts-container {
     width: 100% !important;

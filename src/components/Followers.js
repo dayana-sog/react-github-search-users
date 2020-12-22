@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 
@@ -9,13 +9,13 @@ const Followers = () => {
     <Wrapper>
       <div className="followers">
         {followers.map((follower, index) => {
-          const {avatar_url: img, html_url, login } = follower; 
+          const { avatar_url: img, html_url, login } = follower;
 
           return (
             <article key={index}>
-              <img src={img} alt={login}/>
+              <img src={img} alt={login} />
               <div>
-                <h4>{login}</h4> 
+                <h4>{login}</h4>
                 <a href={html_url}>{html_url}</a>
               </div>
             </article>
@@ -27,22 +27,29 @@ const Followers = () => {
 };
 
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
+  border: 2px solid var(--border-color);
+  
   position: relative;
 
   &::before {
     content: ' followers';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -2px;
     transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
+    background: var(--clr-grey-10);
+    color: var(--border-color);
     border-top-right-radius: var(--radius);
     border-top-left-radius: var(--radius);
+
+    border-top: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
+
     text-transform: capitalize;
     padding: 0.5rem 1rem 0 1rem;
     letter-spacing: var(--spacing);
@@ -72,6 +79,7 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0;
+      color: var(--clr-white);
     }
     a {
       color: var(--clr-grey-5);

@@ -41,21 +41,27 @@ const Card = () => {
   );
 };
 const Wrapper = styled.article`
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
   padding: 1.5rem 2rem;
   border-top-right-radius: var(--radius);
   border-bottom-left-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
   position: relative;
+  border: 2px solid var(--border-color);
+
+
   &::before {
     content: 'user';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -2px;
     transform: translateY(-100%);
-    background: var(--clr-white);
-    color: var(--clr-grey-5);
+    background: var(--clr-grey-10);
+    color: var(--border-color);
     border-top-right-radius: var(--radius);
+    border-top: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
     border-top-left-radius: var(--radius);
     text-transform: capitalize;
     padding: 0.5rem 1rem 0 1rem;
@@ -75,13 +81,14 @@ const Wrapper = styled.article`
     }
     h4 {
       margin-bottom: 0.25rem;
+      color: var(--clr-white);
     }
     p {
       margin-bottom: 0;
     }
     a {
-      color: var(--clr-primary-5);
-      border: 1px solid var(--clr-primary-5);
+      color: var(--border-color);
+      border: 1px solid var(--border-color);
       padding: 0.25rem 0.75rem;
       border-radius: 1rem;
       text-transform: capitalize;
@@ -89,13 +96,13 @@ const Wrapper = styled.article`
       transition: var(--transition);
       cursor: pointer;
       &:hover {
-        background: var(--clr-primary-5);
+        background: var(--border-color);
         color: var(--clr-white);
       }
     }
   }
   .bio {
-    color: var(--clr-grey-3);
+    color: var(--clr-grey-6);
   }
   .links {
     p,
@@ -109,13 +116,13 @@ const Wrapper = styled.article`
       }
     }
     a {
-      color: var(--clr-primary-5);
+      color: var(--clr-primary-8);
       transition: var(--transition);
       svg {
         color: var(--clr-grey-5);
       }
       &:hover {
-        color: var(--clr-primary-3);
+        color: var(--clr-primary-8);
       }
     }
   }

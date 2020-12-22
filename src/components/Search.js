@@ -1,9 +1,50 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { MdSearch } from 'react-icons/md';
 import { GithubContext } from '../context/context';
+
 const Search = () => {
-  return <h2>search component</h2>;
+  const [user, setUser] = useState('');
+  const { request, error } = useContext(GithubContext);
+
+
+  //get things from the global content
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+
+    if (user) {
+       
+
+    }
+  };
+
+  return (
+    <section className="section">
+      <Wrapper className="section-center">
+        {error.show && (
+          <ErrorWrapper>
+            <p>{error.msg}</p>
+          </ErrorWrapper>) 
+        }
+        <form onSubmit={handleSubmit}>
+          <div className="form-control">
+            <MdSearch />
+            <input
+              type="text"
+              placeholder="Enter GitHub User"
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+            />
+            {request > 0 && (
+              <button type="submit">Search</button>
+            )}
+          </div>
+        </form>
+        <h3>Request: {request}/60</h3>
+      </Wrapper>
+    </section>
+  );
 };
 
 const Wrapper = styled.div`
@@ -43,13 +84,14 @@ const Wrapper = styled.div`
       padding: 0.25rem 0.5rem;
       text-transform: capitalize;
       letter-spacing: var(--spacing);
-      background: var(--clr-primary-5);
+      background: var(--border-color);
       color: var(--clr-white);
       transition: var(--transition);
       cursor: pointer;
       &:hover {
-        background: var(--clr-primary-8);
-        color: var(--clr-primary-1);
+        border: 2px solid var(--border-color);
+        background: var(--clr-white);
+        color: var(--border-color);
       }
     }
 
