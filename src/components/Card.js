@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { GithubContext } from '../context/context';
 import styled from 'styled-components';
 import { MdBusiness, MdLocationOn, MdLink } from 'react-icons/md';
@@ -34,9 +35,9 @@ const Card = () => {
           <MdLocationOn/> {location || 'uninformed'}
         </p>
       </div>
-      <a href={`https://${blog}`}>
+      <Link to={`https://${blog}`}>
         <MdLink/> {blog || 'uninformed'}
-      </a>
+      </Link>
     </Wrapper>
   );
 };

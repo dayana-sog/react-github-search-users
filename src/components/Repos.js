@@ -95,6 +95,18 @@ const Wrapper = styled.div`
     width: 100% !important;
     border-radius: var(--radius) !important;
   }
+  .raphael-group-19-caption text {
+    fill: var(--border-color) !important;
+  }
+  .raphael-group-169-caption text {
+    fill: var(--border-color) !important;
+  }
+  .raphael-group-313-caption text {
+    fill: var(--border-color) !important;
+  }
+  .raphael-group-391-caption text {
+    fill: var(--border-color) !important;
+  }
 `;
 
 
