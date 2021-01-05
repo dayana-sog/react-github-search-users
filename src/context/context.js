@@ -15,7 +15,7 @@ const GithubProvider = ({ children }) => {
 
   //request loading
   const [request, setRequest] = useState(0);
-  const [loading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
   //error
   const [error, setError] = useState({ show: false, msg: '' }); 
@@ -23,8 +23,7 @@ const GithubProvider = ({ children }) => {
   const searchGitHubUser = async(user) => {
     //Toggle Error
     toggleError();
-
-    //setLoading(true);
+    setIsLoading(true);
 
     const response = await axios(`${rootUrl}/users/${user}`).catch(
       error => console.log(error)
@@ -34,10 +33,21 @@ const GithubProvider = ({ children }) => {
 
     if (response) {
       setGithubUser(response.data);
-      //more logic
+      const { login, followers_url } = response.data;
+
+      // repos
+      axios(`${rootUrl}/users/${login}/repos?per_page=100`).then(
+        response => console.log(response));
+
+      // followers
+      axios(`${followers_url}?per_page=100`).then(
+        response => console.log(response));
     } else {
       toggleError(true, 'There is no user with that username, try again! ');
     }
+
+    checkRequest();
+    setIsLoading(false);
      
   };
 
@@ -70,7 +80,8 @@ const GithubProvider = ({ children }) => {
         followers,
         request,
         error,
-        searchGitHubUser
+        searchGitHubUser,
+        isLoading
       }}
     >
       {children}

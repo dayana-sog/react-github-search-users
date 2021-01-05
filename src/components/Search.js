@@ -5,7 +5,7 @@ import { GithubContext } from '../context/context';
 
 const Search = () => {
   const [user, setUser] = useState('');
-  const { request, error, searchGitHubUser } = useContext(GithubContext);
+  const { request, error, searchGitHubUser, isLoading  } = useContext(GithubContext);
 
   //get things from the global content
   const handleSubmit = (e) => {
@@ -34,7 +34,7 @@ const Search = () => {
               value={user}
               onChange={(e) => setUser(e.target.value)}
             />
-            {request > 0 && (
+            {request > 0 && !isLoading && (
               <button type="submit">Search</button>
             )}
           </div>
