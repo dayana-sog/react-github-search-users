@@ -8,6 +8,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "fusioncharts": "^3.15.1-sr.1",
     "lottie-react-web": "^2.2.2",
     "react": "^16.13.1",
