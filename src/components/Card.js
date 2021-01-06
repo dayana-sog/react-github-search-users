@@ -50,7 +50,6 @@ const Wrapper = styled.article`
   position: relative;
   border: 2px solid var(--border-color);
 
-
   &::before {
     content: 'user';
     position: absolute;

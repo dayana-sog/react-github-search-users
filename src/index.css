@@ -153,8 +153,9 @@ p {
   border-radius: var(--radius);
 }
 .btn:hover {
-  background: var(--clr-primary-8);
-  color: var(--clr-primary-1);
+  border: 2px solid var(--border-color);
+  background: var(--clr-grey-10);
+  color: var(--border-color);
 }
 
 /* section */
