@@ -14,7 +14,7 @@ function AuthWrapper({ children }) {
     return (
       <Wrapper>
         <Lottie
-          width="80%"
+          width="20%"
           options={{
             animationData: loadingGif,
             loop: true,
