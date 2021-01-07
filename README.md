@@ -1,115 +1,96 @@
-## Starter Project
 
-- css provided (global styles, styled components)
-- folders/files already setup
-- all imports included (warnings)
-- index.js for easier imports
+# <p align="center">:mag_right: Github User Search</p> 
 
-## Styled Components
+Teste Aplicação:  <a href="https://searching-github-users.netlify.app/">Github User Search</a>
 
-[Styled-Components - Main Docs](https://styled-components.com/)
+Aplicação criado como intuito por em prática os estudos REACTJS, com a funcionalidade SPA(Single Page Application), e com a responsividade.
 
-```jsx
-import styled from "styled-components";
+A aplicação foi baseada na vídeo aula no [Youtube](https://www.youtube.com/watch?v=dR_Fol8nAzo). As principais funcionalidades aprendidas foram: 
 
-const ReactComponent = () => {
- // logic here
- return <Wrapper>
- {some content}
- </Wrapper>
-}
+- Fazer buscar dos dados na API do GitHub: 
+	- Dados do usuário;
+	- Quantidade de followers;
+	- Dados dos repositórios;
+	- Quais repositórios obtiveram mais forks;
+	- Quais repositórios obtiveram mais stars;
+	- Quantidade limite de requisições por hora: 60;
+	
+- Passar os dados da API do GitHub para gráficos:
+	- Bar3D;
+	- Column3D;
+	- Doughnut2D;
+	- Pie3D;
+
+- Autenticação utilizando o Auth0 que dá a possibilidade de fazer login com suas redes sociais:
+	- GitHub;
+	- LinkedIn;
+	- Gmail;
+	- Caso queira pode criar uma conta também;
+	
 
 
-const Wrapper = styled.htmlElement`
-write your styles here
-`
-export default ReactComponent
+
+---
+**Tela da aplicação**:
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/57035171/103894165-6b6df300-50e6-11eb-8920-cd6e06a4299a.png">
+</p>
+ 
+ <p align="center">
+	 <img src="https://user-images.githubusercontent.com/57035171/103894220-82ace080-50e6-11eb-9c95-b09413525007.png">
+</p>
+
+  <p align="center">
+	 <img src="https://user-images.githubusercontent.com/57035171/103894251-8e000c00-50e6-11eb-9faf-17ed6cb22d74.png">
+</p>
+
+
+
+
+## :computer:  Tecnologias / Ferramentas Utilizadas:
+-   [ReactJS](https://pt-br.reactjs.org/)
+-   [React Router Dom](https://reactrouter.com/web/guides/quick-start)
+-   [Styled Component](https://styled-components.com/)
+-   [React Anchor Link Smooth Scroll](https://www.npmjs.com/package/react-anchor-link-smooth-scroll)
+-   [Axios](https://github.com/axios/axios)
+-   [FusionCharts](https://www.fusioncharts.com/)
+-   [Lottie React Web](https://www.npmjs.com/package/lottie-react-web)
+-  [Auth0](https://auth0.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [GitHub Api](https://docs.github.com/en/free-pro-team@latest/rest)
+	
+## :books: Instalação:
+
+Clone o repositório:
+```sh
+$ git clone https://github.com/dayana-sog/react-github-search-users
 ```
 
-## React Icons
-
-[React Icons - Main Docs](https://react-icons.github.io/react-icons/)
-
-```jsx
-import { FiUsers, FiUserPlus } from 'react-icons/fi';
-<FiUsers className='nameOfTheClass'> </FiUsers>;
+Aceda a pasta do projeto:
+```sh
+$ cd react-github-search-users
+```
+Instale as dependências:
+```sh
+$ yarn
 ```
 
-## React Router Dom
+Sobre a autorização:
+Vá ao site da [Auth0](https://auth0.com/docs/quickstart/spa/react) siga o passo a passo para buscar a sua **Application Keys** - **Domais** e **Client ID** substitua os dados que estão no arquivo **src/index.js**  no componente **Auth0Provider** e aplique o seu **Domais** e **Client ID**.
 
-version used - "react-router-dom": "^5.2.0",
-
-- [react-router-dom - Main Docs](https://reactrouter.com/web/guides/quick-start)
-
-- <Switch> renders the first child <Route> that matches
-- A <Route path="*"> always matches
-
-## Gihthub API
-
-- [Root Endpoint](https://api.github.com)
-- [Get User](https://api.github.com/users/dayana-sog)
-- [Repos](https://api.github.com/users/dayana-sog/repos?per_page=100)
-- [Followers](https://api.github.com/users/dayana-sog/followers)
-- [Rate Limit](https://api.github.com/rate_limit)
-
-  For unauthenticated requests, the rate limit allows for up to 60 requests per hour. Unauthenticated requests are associated with the originating IP address, and not the user making requests.
-
-## Fusion Charts
-
-- [Fusion Charts - Main Docs](https://www.fusioncharts.com/)
-- [First React Chart](https://www.fusioncharts.com/dev/getting-started/react/your-first-chart-using-react)
-- [List Of Charts](https://www.fusioncharts.com/dev/chart-guide/list-of-charts)
-- [Themes](https://www.fusioncharts.com/dev/themes/introduction-to-themes)
-
-## Auth0
-
-- [Auth0 - Main Docs](https://auth0.com/)
-
-- Create Application
-- Choose : Single Page Web Applications
-- Choose : React
-- Go to Settings Tab
-- Copy/Paste Domain, ClientID - can be public (or use .env)
-- Add Domain -
-  for now http://localhost:3000 (DON'T COPY PASTE FROM URL BAR)
-
-  - Allowed Callback URLs
-  - Allowed Logout URLs
-  - Allowed Web Origins
-  - SAVE CHANGES!!!!!!!!!!!!!!!
-
-- Connections
-  email,social
-
-- [React SDK Docs](https://auth0.com/docs/libraries/auth0-react)
-- [REACT SDK API Docs](https://auth0.github.io/auth0-react/)
-
-## Deployment
-
-[Netlify](https://www.netlify.com/)
-
-## Additional Info
-
-#### Redirects with react-router-dom
-
-In order for routing to work on netlify, redirects was added to the public folder
-
-- \_redirects file in public
-
+Inicie o servidor:
+```sh
+$ yarn start
 ```
 
-/*    /index.html   200
 
-```
+## 🚀 Deployment: 
+https://www.netlify.com/
 
-[Redirects Blog Post](https://dev.to/dance2die/page-not-found-on-netlify-with-react-router-58mc)
 
-#### Warnings and create-react-app
+## 📝  Licença:
 
-package.json
-
-```js
-"build": "CI= react-scripts build",
-```
-
-[create-react-app Warning Fix Blog Post](https://community.netlify.com/t/how-to-fix-build-failures-with-create-react-app-in-production/17752)
+Esse projeto está sob a licença MIT. Veja o arquivo  [LICENSE](https://github.com/dayana-sog/react-github-search-users/blob/master/LICENSE)  para mais detalhes.
+___
+Feito com ♥ by Dayana Gonçalves  👋 
